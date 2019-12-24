@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Node.js와 개발환경(배경지식)</title>
+  <meta charset="UTF-8" />
+</head>
+
+<body>
+  <div>
+    <h1>Node.JS와 개발환경(배경지식)</h1>
+    <hr />
+    <h2>
+      1. <strong>Compiled</strong>와 <strong>Intepretered</strong>의 차이점은
+      무엇이지?
+    </h2>
+    <ul>
+      <li>
+        프로그램 언어를 해석하고 실행시키는 대표적 방법 중 하나가 Compile 과
+        Intepretered 방식임. (언어의 구동원리)
+      </li>
+      <li>
+        Compiled는 컴파일러에 의해 실행되고, Intepretered는 인터프리터에 의해
+        실행됨.
+        <br />
+        <small>많은 프로그래밍 언어들이 둘 중 한가지 방식을 통해 언어를 실행함.
+          예외: java와 같이 두가지 모두 사용하는 경우도 있음.</small>
+      </li>
+      <li>
+        <h3>Compiled</h3>
+        <ul>
+          <li>
+            프로그래밍 언어를 Runtime 이전에 기계어로 해적하는 작업 방식
+          </li>
+          <li>
+            Runtime 이전에 Assembly 언어로 변환하기 때문에 구동 시간이
+            오래걸리지만, 구동된 이후에는 하나의 패키지로 매우 빠르게 작동함.
+          </li>
+          <li>
+            구동시에 코드와 함께 시스템으로 부터 메모리를 할당받으며 할당받은
+            메모리를 사용하게 됨.
+          </li>
+          <li>
+            Runtime 이전에 이미 해석을 마치고 대게 컴파일 결과물이 바로
+            기계어로 전환되기 때문에 OS 및 빌드 환경에 종속적임.
+          </li>
+          <li>
+            때문에 OS 환경에 맞게 호환되는 라이브러리와 빌드 환경을 구분해서
+            구축해줘야 한다.
+          </li>
+          <li>
+            Compiled 언어의 대표적 예: C, C++
+            <br />
+            <small>Java 역시 Byte Code로 바꾸기 위한 과정에서 컴파일을
+              수행함.</small>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <h3>Intepretered</h3>
+        <ul>
+          <li>
+            Runtime 이후에 Row단위로 해석하며 프로그램을 구동시키는 방식.
+          </li>
+          <li>
+            프로그래밍 언어를 기계어로 바로 바꾸지않고 중간 단계를 거친 뒤,
+            Runtime 즉시 해석하기 때문에 바로 컴팩트한 패키지 형태로 Binary
+            파일을 뽑아낼 수 있는 Compiled 방식에 비해 낮은 퍼포먼스를 보이게
+            됨.
+          </li>
+          <li>
+            Runtime에 직접 코드를 구동시키는 특징이 있기 때문에 실제
+            실행시간느 느리다. 대신 Runtime에 실시간 Debugging 및 코드 수정이
+            가능하다.
+          </li>
+          <li>
+            또한 메모리를 별도로 할당받아 수행되지 않으며, 필요할 때 할당하여
+            사용한다.
+            <br />
+            <small>
+              이와 관련하여 코드의 흐름 자체도 실제 필요할 때, 실제
+              수행되어야하는 시점에 수행되기 때문에 덕타이핑(Duck typing)이
+              가능한 층면이 있으나, 반대로 정적 분석이 되지않는 Trade off를
+              갖고 있음.</small>
+          </li>
+          <li>
+            Intepretered 언어의 대표적 예: javascript와 같은 script언어들.
+            <br />
+            <small>script 언어 뿐 아니라 컴파일 이후의 동작에서 Intepretered를
+              수행하는 언어들도 많이 존재함.</small>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <h4>참고 사이트</h4>
+        <ul>
+          <li>
+            <a target="_blank"
+              href="https://jins-dev.tistory.com/entry/Compiler-%EC%99%80-Interpreter-%EC%9D%98-%EA%B0%9C%EB%85%90%EA%B3%BC-%EC%B0%A8%EC%9D%B4%EC%A0%90">jins-dev.tistory.com
+              컴파일러와 인터프리터의 개념과 차이점</a>
+          </li>
+          <li>
+            <a target="_blank" href="https://www.opentutorials.org/course/1720/9732">생활코딩: 컴파일러와 인터프리터</a>
+          </li>
+          <li>
+            <a target="_blank" href="https://hdnua.tistory.com/5">생활코딩: 컴파일러와 인터프리터(블로그 내용)</a>
+          </li>
+          <li>
+            <a target="_blank"
+              href="https://stackoverflow.com/questions/3265357/compiled-vs-interpreted-languages">stackoverflow:
+              Compiled vs. Interpreted Languages</a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+  <br />
+  <hr />
+  <div>
+    <h2>2. IDE</h2>
+    <ul>
+      <li>
+        통합 개발 환경(IDE)은 Integrated Development Environment의 줄임말
+      </li>
+      <li>즉, 개발환경을 말함. 개발을 하면서 사용되는 도구들의 집합.</li>
+      <li>
+        <h3>무엇이 통합되어 있을까?</h3>
+        <ul>
+          <li>개발하는데 필요한 편집기</li>
+          <li>언어팩</li>
+          <li>syntax highlighting</li>
+          <li>git 연동</li>
+          <li>터미널</li>
+          <li>각종 테마</li>
+          <li>
+            기타 플러그인 등
+            <br />
+            <small>통합 개발환경에 따라 다르지만 보통 위의 구성임. </small>
+          </li>
+        </ul>
+        <h3>언어별 어떤 IDE가 있을까?</h3>
+        <ul>
+          <li>
+            <strong>C,C++:</strong> Anjuta C/C++ IDE, BVRDE, C-Free,
+            code::block, CPPIDE, c.vim, Dev-C++, Developers IDE, KDevelop,
+            UEStudio IDE 등..
+          </li>
+          <li>
+            <strong>Java:</strong> BlueJ Java IDE, Eclipse, Gel, JBuilder,
+            JEdit, IDEA, NetBeans, Oracle JDeveloper, SlickEdit, XEmancs 등..
+          </li>
+          <li>
+            <strong>.NET:</strong> #Develop, Antenchinus, ASP.NET Web Matrix,
+            PrimalScript, SharpDevelop, Visual Studio .NET 등..
+          </li>
+          <li>
+            <strong>PHP:</strong> Dev-PHP, Eclipse PHP IDE, Komodo IDE,
+            PHPEdit 등..
+          </li>
+          <li>
+            <strong>Python:</strong> BlackAdder, Boa Constructor, Eric, IDLE,
+            SPE IDE, Wing IDE, xRope 등..
+          </li>
+          <li>
+            <strong>Ruby:</strong> Arachno Ruby, FreeRIDE, Mondrian, RadRails
+            RDT 등..
+          </li>
+          <li>
+            <strong>Javascript:</strong> WebStorm, Visual Studio 2017, VScode,
+            NetBeans, Komodo, Eclipse 등..
+          </li>
+          <li>
+            <small>
+              출처:
+              <a target="_blank" href="https://blog.softbell.net/432">https://blog.softbell.net/432</a>
+            </small>
+            <br />
+            <small>
+              출처:
+              <a target="_blank"
+                href="https://nch1234.tistory.com/1351">https://nch1234.tistory.com/1351</a>
+            </small>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</body>
+
+</html>
