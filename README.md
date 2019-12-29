@@ -1,5 +1,6 @@
 # 다각형의 넓이구하기
 ## 재귀 연습하기
+[재귀함수 참고 사이트: 칸 아카데미](https://ko.khanacademy.org/computing/computer-science/algorithms/recursive-algorithms/a/recursion)
 ### 팩토리얼
 n의 팩토리얼은 n!이라고 표시합니다. 이는 1부터 n까지의 정수를 곱하는 단순한 연산입니다.
 - 5! = 1 x 2 x 3 x 4 x 5 즉 120입니다.
@@ -144,9 +145,63 @@ console.log(testConst); // 1
   - 이것을 Big O 표기법으로 O(log n)이라고 표기하고 로그 시간이라고 부른다.
   - 이진 탐색은 매우 빠른 속도로 데이터를 찾을 수 있지만 반드시 데이터가 정렬되어 있어야만 한다.
   #### log 로그
-  - 이 표현은 쉽게 말해서 10을 몇번 곱해야 100이 되는 지 묻는 것이다. 
+  - 이 표현은 쉽게 말해서 10을 몇번 곱해야 100이 되는 지 묻는 것이다.   
   ![](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fk.kakaocdn.net%2Fdn%2Fxelml%2FbtqwHKmLlsN%2FEeWsDRjhHvhhkrxsrrS751%2Fimg.png)
   - 답은 2가 된다.
   - [로그에 대해 더 알아보기](https://mathbang.net/595)
-  
+``` javascript
+const arr = [];
+for (let i = 1; i <= 20; i++) {
+  arr.push(i);
+}
+function binarySearch(target, dataArray) {
+  let start = 0;
+  let end = dataArray.length - 1;
+  let index = 0;
+  while (start <= end) {
+    let mid = Math.floor((end + start) / 2);
+    let guess = dataArray[mid];
+    if (guess === target) {
+      return guess;
+    } else if (guess > target) {
+      end = mid - 1;
+    } else {
+      start = mid + 1;
+    }
+    index++;
+    console.log(
+      `${index}. start: ${start}, mid: ${mid}, end: ${end}, data: ${
+        dataArray[mid]
+      }`
+    );
+  }
+  return undefined;
+}
+
+var result = binarySearch(3, arr);
+console.log(result);
+
+```
+``` javascript
+const arr = [];
+for (let i = 1; i <= 2040; i++) {
+  arr.push(i);
+}
+function binarySearch(array, start, end, key) {
+  // let index = 0;
+  if (start > end) return false;
+  const mid = (start + end ) / 2;
+  if (array[mid] === key ) {
+    return true;
+  }else if(array[mid] > key) {
+    return binarySearch(array, start, mid-1, key);
+  }else{
+    return binarySearch(array, mid+1, end, key);
+  }
+}
+
+var result = binarySearch(3, arr);
+console.log(result);
+```
+###
 ### 단위 테스트란?
