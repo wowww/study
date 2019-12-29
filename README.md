@@ -203,5 +203,20 @@ function binarySearch(array, start, end, key) {
 var result = binarySearch(3, arr);
 console.log(result);
 ```
-###
-### 단위 테스트란?
+
+### 단위 테스트(Unit Test)란?
+프로그램을 작은 단위로 쪼개서 내가 짠 프로그램이 내가 원하는 결과대로 동작하는지 테스트할 수 있다.  
+단위 테스트를 거치면 프로그램의 안정성이 높아지며, 단위 테스트를 믿고 리팩토링을 할 수 있다. 
+  #### 리팩토링
+  - 결과의 변경없이 코드의 구조를 재조정함.
+  - 가독성을 높이고 유지보수를 편하게 함.
+  - 버그를 없애거나 새로운 기능을 추가하는 행위는 아니다.  
+ 
+javascript로 짜여진 프로그램에서 오류를 찾을 때, 단위 테스트를 거치지 않은 프로그램의 경우는 전체 흐름을 파악하며 원인을 찾아야하는데 원인을 찾아 수정한다해도 이 결과가 어떤 이팩트를 가져올지 예상하기 어려울 수 있다.   
+#### 단위테스트 방법
+- vscode 단위 테스트 작성 방법
+
+[docs.microsoft.com/](https://docs.microsoft.com/ko-kr/visualstudio/javascript/unit-testing-javascript-with-visual-studio?view=vs-2019)
+
+[참고 사이트1: www.guru99.com/](https://www.guru99.com/unit-testing-guide.html)   
+[참고 사이트2: devriver.tistory.com/](https://devriver.tistory.com/25)
