@@ -91,3 +91,66 @@ superheros.forEach(hero => {
   console.log(hero);
 });
 ```
+
+
+## 추가미션
+### javascript set과 map에 대해 알아보고 정리하기
+set   
+set() 메서드는 Map 객체에서 주어진 키를 가진 요소를 추가하고 키의 요소가 이미 있다면 대채함.
+```
+myMap.set(key, value);
+```
+
+매개변수   
+`key`  
+ map에 추가하거나 변경할 요소의 키.  
+`value`
+ map에 추가하거나 변경할 요소의 값.  
+ 
+ 
+map   
+map() 메서드는 배열 내의 모든 요소 각각에 대하여 주어진 함수를 호출한 결과를 모아 새로운 배열을 반환합니다.
+- for문 활용 예제 1
+``` javascript
+const array = [1, 2, 3, 4, 5, 6, 7, 8];
+const squared = [];
+for (let i = 0; i < array.length; i++) {
+squared.push(array[i] * array[i]);
+}
+console.log(squared);
+```
+- for문 활용 예제 2
+``` javascript
+const array = [1, 2, 3, 4, 5, 6, 7, 8];
+const squared = [];
+for (let i = 0; i < array.length; i++) {
+squared.push(array[i] * array[i]);
+}
+console.log(squared);
+```
+- map 활용 예제 1
+``` javascript
+const array = [1, 2, 3, 4, 5, 6, 7, 8];
+const square = n => n * n;
+const squared = array.map(square);
+console.log(squared);
+```
+- map활용 예제 2
+``` javascript
+const items = [
+  {
+    id: 1,
+    text: 'hello'
+  },
+  {
+    id: 2,
+    text: 'bye'
+  }
+];
+
+const texts = items.map(item => item.id);
+console.log(texts);
+```
+#### 어떻게 사용하는 것인가?
+#### object, array와 어떤 점이 다른가?
+#### 언제 유용하게 쓰일 수 있을까?
