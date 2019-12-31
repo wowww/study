@@ -92,6 +92,28 @@ superheros.forEach(hero => {
 });
 ```
 
+## 배열 결과 출력1
+``` javascript
+
+```
+```
+["width", "height", "hOffset", "vOffset", "size", "hOffset", "vOffset"]
+```
+## 배열 결과 출력2
+``` javascript
+
+```
+```
+["Yong", "hary", "solvin", "hani", "chulsu"]
+```
+## reduce 만들기
+```
+const myReduce = (arr, callback, initialValue) => {
+    //여기에 구현
+}
+
+const result = myReduce(arr, (next,prev) => {...}, []);
+```
 
 ## 추가미션
 ### javascript set과 map에 대해 알아보고 정리하기
