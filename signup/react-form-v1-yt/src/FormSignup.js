@@ -56,7 +56,7 @@ const FormSignup = () => {
           </label>
           <input 
             id="password2"
-            type="password2" 
+            type="password" 
             name="password2" 
             className="form-input"
             placeholder="Enter your password"
