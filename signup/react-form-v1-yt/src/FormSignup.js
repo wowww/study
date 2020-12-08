@@ -32,6 +32,8 @@ const FormSignup = () => {
             name="email" 
             className="form-input"
             placeholder="Enter your email"
+            value={values.email}
+            onChange={handleChange}
             />
         </div>
         <div className="form-inputs">
@@ -44,6 +46,8 @@ const FormSignup = () => {
             name="password" 
             className="form-input"
             placeholder="Enter your password"
+            value={values.password}
+            onChange={handleChange}
             />
         </div>
         <div className="form-inputs">
@@ -56,6 +60,8 @@ const FormSignup = () => {
             name="password2" 
             className="form-input"
             placeholder="Enter your password"
+            value={values.password2}
+            onChange={handleChange}
             />
         </div>
         <button className="form-input-btn">
