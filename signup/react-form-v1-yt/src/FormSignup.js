@@ -37,6 +37,7 @@ const FormSignup = () => {
             value={values.email}
             onChange={handleChange}
             />
+            {errors.email && <p>{errors.email}</p>}
         </div>
         <div className="form-inputs">
           <label htmlFor="password" className="form-label">
@@ -51,6 +52,7 @@ const FormSignup = () => {
             value={values.password}
             onChange={handleChange}
             />
+            {errors.password && <p>{errors.password}</p>}
         </div>
         <div className="form-inputs">
           <label htmlFor="password2" className="form-label">
@@ -65,6 +67,7 @@ const FormSignup = () => {
             value={values.password2}
             onChange={handleChange}
             />
+            {errors.password2 && <p>{errors.password2}</p>}
         </div>
         <button className="form-input-btn">
           Sign up
