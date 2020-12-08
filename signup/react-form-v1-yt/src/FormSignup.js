@@ -2,11 +2,11 @@ import React from 'react'
 import useFrom from './useForm'
 
 const FormSignup = () => {
-  const { handleChange, values } = useFrom();
+  const { handleChange, values, handleSubmit } = useFrom();
 
   return (
     <div className="form-content-right">
-      <form className="form">
+      <form className="form" onSubmit={handleSubmit}>
         <h1>Get started with us today! Create your account by filling out the information below.</h1>
         <div className="form-inputs">
           <label htmlFor="username" className="form-label">

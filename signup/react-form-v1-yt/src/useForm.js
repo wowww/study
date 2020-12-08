@@ -11,12 +11,17 @@ const useFrom = () => {
 
   const handleChange = e => {
     const { name, value } = e.target
-    setErrors({
+    setValues({
       ...values,
       [name]: value
     })
   }
-  return { handleChange, values };
+
+  const handleSubmit = e => {
+    e.preventDefault();
+  }
+
+  return { handleChange, values, handleSubmit };
 }
 
 export default useFrom;
