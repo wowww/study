@@ -1,3 +1,13 @@
+# 실행방법
+
+- 해당폴더(reat-form) 진입 후, `yarn install`   
+- 서버 실행: `yarn start`   
+
+
+
+---
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
