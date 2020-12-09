@@ -11,7 +11,7 @@ export class Register extends React.Component {
       <div className="header">Register</div>
       <div className="content">
         <div className="image">
-          <img src="{loginImg}" alt=""/>
+          <img src={loginImg} alt=""/>
         </div>
         <div className="form">
           <div className="form-group">
