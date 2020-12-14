@@ -25,7 +25,7 @@ export class Visual {
 
     this.pos = this.text.setText('A', 2, stageWidth, stageHeight);
 
-    this.container = new PIXI.particleContainer(
+    this.container = new PIXI.ParticleContainer(
       this.pos.length,
       {
         vertices: false,
