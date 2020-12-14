@@ -1,10 +1,10 @@
 export class Text {
   constructor() {
     this.canvas = document.createElement('canvas');
-    this.canvas.style.position = 'absolute';
-    this.canvas.style.left = '0';
-    this.canvas.style.top = '0';
-    document.body.appendChild(this.canvas);
+    // this.canvas.style.position = 'absolute';
+    // this.canvas.style.left = '0';
+    // this.canvas.style.top = '0';
+    // document.body.appendChild(this.canvas);
 
     this.ctx = this.canvas.getContext('2d');
   }
@@ -16,7 +16,7 @@ export class Text {
     const myText = str;
     const fontWidth = 700;
     const fontSize = 800;
-    const fontName = 'Hide';
+    const fontName = 'Hind';
 
     this.ctx.clearRect(0, 0, stageWidth, stageHeight);
     this.ctx.font = `${fontWidth} ${fontSize}px ${fontName}`;
@@ -40,7 +40,7 @@ export class Text {
       0, 0, stageWidth, stageHeight
     ).data;
 
-    const particle = [];
+    const particles = [];
     let i = 0;
     let width = 0;
     let pixel;
@@ -61,13 +61,13 @@ export class Text {
           width < stageWidth && 
           height > 0 && 
           height < stageHeight) {
-            particle.push({
+            particles.push({
               x: width,
               y: height,
             });
         }
       }
-      return particle;
+      return particles;
     }
   }
 
