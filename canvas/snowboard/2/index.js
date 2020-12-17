@@ -2,8 +2,10 @@
 
 var c = document.createElement("canvas");
 var ctx = c.getContext("2d");
-c.width = 500;
-c.height = 350;
+var W = window.innerWidth;
+	var H = window.innerHeight;
+	c.width = W;
+	c.height = H;
 
 document.body.appendChild(c);
 
@@ -31,7 +33,6 @@ var player = new function() {
   this.img.src = "board.png"
   this.draw = function() {
     var p1 = c.height - noise(t + this.x) * 0.25;
-    var p2 = c.height - noise( + 5 + this.x) * 0.25;
     if(p1-15 > this.y) {
       this.ySpeed += 0.1;
     } else {
