@@ -3,7 +3,7 @@ import React from 'react'
 function ResisterPage() {
   return (
     <div>
-      ResisterPage
+      ResisterPage !!
     </div>
   )
 }
