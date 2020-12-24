@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Axios from 'axios';
 import { useDispatch } from 'react-redux';
+import { loginUser } from '../../../_action/user_action';
 
 function LoginPage() {
   const dispatch = useDispatch();
