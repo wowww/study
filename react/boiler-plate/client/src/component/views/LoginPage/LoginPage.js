@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import Axios from 'axios';
+// import Axios from 'axios';
 import { useDispatch } from 'react-redux';
 import { loginUser } from '../../../_action/user_action';
 
-function LoginPage() {
+function LoginPage(props) {
   const dispatch = useDispatch();
 
   const [Email, setEmail] = useState("");
@@ -24,6 +24,13 @@ function LoginPage() {
     }
 
     dispatch(loginUser(body))
+    .then(response => {
+      if(response.payload.loginSuccess) {
+        props.history.push('/')
+      } else {
+        alert('Error')
+      }
+    })
   }
 
   return (
