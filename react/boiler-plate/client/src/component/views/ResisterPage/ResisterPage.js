@@ -42,10 +42,10 @@ function ResisterPage(props) {
 
       dispatch(resisterUser(body))
       .then(response => {
-          if (response.payload.loginSuccess) {
-              props.history.push("/")
+          if(response.payload.success) {
+            props.history.push("/login")
           } else {
-              alert('Error')
+            alert("Failed to sign up.")
           }
       })
     }
