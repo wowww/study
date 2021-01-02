@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux';
-import { loginUser } from '../../../_action/user_action'; 
+import { resisterUser } from '../../../_action/user_action'; 
 
 function ResisterPage(props) {
   const dispatch = useDispatch();
@@ -29,12 +29,18 @@ function ResisterPage(props) {
   const onSubmitHandler = (event) => {
       event.preventDefault(); // 페이지 리프레시 방지
 
-      let body ={
-          email: Email,
-          password: Password
+      if (Password !== ConfirmPassword) {
+        return alert('비밀번호와 비밀번호 확인은 같아야 합니다.');
       }
 
-      dispatch(loginUser(body))
+      let body ={
+          email: Email,
+          password: Password,
+          name: name,
+
+      }
+
+      dispatch(resisterUser(body))
       .then(response => {
           if (response.payload.loginSuccess) {
               props.history.push("/")
