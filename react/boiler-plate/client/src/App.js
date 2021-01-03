@@ -17,9 +17,9 @@ function App() {
       <Router>
       <div>
         <Switch>
-          <Route exact path="/" component={Auth(LandingPage)} />
-          <Route exact path="/login" component={LodingPage} />
-          <Route exact path="/resister" component={ResisterPage} />
+          <Route exact path="/" component={Auth(LandingPage, null)} />
+          <Route exact path="/login" component={Auth(LodingPage, false)} />
+          <Route exact path="/resister" component={Auth(ResisterPage), false} />
         </Switch>
       </div>
     </Router>
