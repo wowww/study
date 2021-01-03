@@ -1,6 +1,8 @@
 import React, { useEffect } from 'react'
 import axois from 'axios';
 // import { response } from 'express';
+import { withRouter } from 'react-router-dom';
+
 function LandingPage() {
   
   useEffect(() => {
@@ -31,4 +33,4 @@ function LandingPage() {
   )
 }
 
-export default LandingPage
+export default withRouter(LandingPage)
