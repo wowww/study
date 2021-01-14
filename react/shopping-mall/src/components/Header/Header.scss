@@ -1,6 +1,98 @@
-.menu {
+header {
+  min-height: 6em;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  overflow: hidden;
+  
+  .logo {
+    
+    a {
+      color: black;
+      text-transform: uppercase;
+    }
+  }
+
+  nav {
+    display: flex;
+    
+    li {
+      display: inline-block;
+
+      a {
+        padding: 0 1em;
+        color: #555;
+        text-transform: uppercase;
+        &:hover {
+          color: lightseagreen;
+        }
+      }
+    }
+
+    .nav-cart {
+      position: relative;
+      cursor: pointer;
+      
+      span {
+        position: absolute;
+        top: -12px;
+        right: -7px;
+        background-color: crimson;
+        font-size: 10px;
+        color: #fff;
+        padding: 3px 5px;
+        border-radius: 50%;
+        z-index: -1;
+      }
+    }
+  }
+}
+
+.menu, .close {
+  display: none;
+}
+
+.menu, .close, .nav-cart {
   width: 1.6em;
+  cursor: pointer;
   img {
     width: 100%;
+  }
+}
+
+// Breakpoint
+$breakpoint-tablet: 758px;
+
+@media screen and (max-width: $breakpoint-tablet) {
+  header {
+    ul {
+      position: fixed;
+      top: -100%;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      flex-direction: column;
+      background: #fff;
+      z-index: 1;
+      opacity: 0.97;
+      transition: 0.5s linear;
+    }
+
+    .menu, .close {
+      display: block;
+    }
+
+    .close {
+      position: absolute;
+      top: 10px;
+      right: 20px;
+    }
+  }
+
+  ul.toggle {
+    top: 0;
   }
 }

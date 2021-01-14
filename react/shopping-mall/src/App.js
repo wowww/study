@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import Header from './components/Header/Header';
 import Section from './components/Section/Section';
+import './App.scss';
 
 class App extends React.Component {
   render() {
