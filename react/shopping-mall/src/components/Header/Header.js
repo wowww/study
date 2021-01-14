@@ -6,10 +6,20 @@ import './Header.scss';
 import { Link } from 'react-router-dom';
 
 export class Header extends Component {
+  state = {
+    toggle: false
+  }
+
+  menuToggle = () => {
+    this.setState({toggle: !this.state.toggle})
+  }
+
   render() {
+    const {toggle} = this.state;
+
     return (
       <header>
-        <div className="menu">
+        <div className="menu" onClick={this.menuToggle}>
           <img src={Menu} alt="Menu" />
         </div>
         <div className="logo">
@@ -18,12 +28,12 @@ export class Header extends Component {
           </h1>
         </div>
         <nav>
-          <ul>
+          <ul className={toggle ? "toggle" : ""}>
             <li><Link to="/">Home</Link></li>
             <li><Link to="/products">Products</Link></li>
             <li><Link to="/contact">Contact</Link></li>
             <li className="close">
-              <img src={Close} alt="Close" />
+              <img src={Close} alt="Close" onClick={this.menuToggle} />
             </li>
           </ul>
           <div className="nav-cart">
