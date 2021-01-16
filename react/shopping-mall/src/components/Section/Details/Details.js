@@ -27,7 +27,7 @@ export class Details extends Component {
     return (
       <>
         {
-          product.map(item => {
+          product.map(item => (
             <div className="details" key={item._id}>
               <img src={item.src} alt="" />
               <div className="box">
@@ -40,7 +40,7 @@ export class Details extends Component {
                 <p>{item.Content}</p>
               </div>
             </div>
-          })
+          ))
         }
       </>
     )
