@@ -8,7 +8,7 @@ export class Cart extends Component {
   static contextType = DataContext;
 
   render() {
-    const { cart, reduction, increase } = this.context;
+    const { cart, reduction, increase, removeProduct } = this.context;
 
     return (
       <>
@@ -29,6 +29,9 @@ export class Cart extends Component {
                   <span>{item.count}</span>
                   <button className="count" onClick={() => increase(item._id)}> + </button>
                 </div>
+              </div>
+              <div className="delete" onClick={() => removeProduct(item._id)}>
+                X
               </div>
             </div>
           ))
