@@ -1,0 +1,48 @@
+.details {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin: 50px 0;
+
+  img {
+    max-width: 500px;
+    min-width: 290px;
+    height: 300px;
+    width: 100%;
+    display: block;
+    object-fit: cover;
+  }
+
+  .box {
+    max-width: 500px;
+    min-width: 290px;
+    margin: 25px;
+  
+    .row {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 15px;
+
+      h2 {
+        text-transform: uppercase;
+      }
+
+      span {
+        color: crimson;
+      }
+    }
+
+    p {
+      line-height: 1.5;
+      margin: 15px 0;
+    }
+  }
+
+  .cart {
+    display: inline-block;
+    padding: .5rem 1rem;
+    background-color: #333;
+    color: #fff;
+    border-radius: .3rem;
+  }
+}
