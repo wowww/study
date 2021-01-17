@@ -65,13 +65,28 @@ export class DataProvider extends Component {
         "colors": ["white", "black", "teal"],
         "count": 6,
       },
-    ]
+    ],
+    cart : [],
+  };
+
+  addCart = (id) => {
+    const { products, cart } = this.state;
+    const check = cart.every(item => {
+      return item._id !== id
+    })
+
+    const data = products.filter(product => {
+      return product._id === id
+    })
+    
+    this.setState({cart: [...cart, ...data]})
   }
 
   render() {
-    const { products } = this.state;
+    const { products, cart } = this.state;
+    const { addCart } = this;
     return (
-      <DataContext.Provider value={{products}}>
+      <DataContext.Provider value={{products, addCart, cart}}>
         {this.props.children}
       </DataContext.Provider>
     )
