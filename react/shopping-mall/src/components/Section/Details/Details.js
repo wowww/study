@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import { DataContext } from '../../Context/Context';
+import Colors from '../Colors/Colors';
 import './Details.scss';
 
 export class Details extends Component {
@@ -35,9 +37,12 @@ export class Details extends Component {
                   <h2>{item.title}</h2>
                   <span>${item.price}</span>
                 </div>
-                <p>{item.colors}</p>
+                <Colors colors={item.colors} />
                 <p>{item.Description}</p>
                 <p>{item.Content}</p>
+                <Link to="/cart" className="cart">
+                  Add to cart
+                </Link>
               </div>
             </div>
           ))
