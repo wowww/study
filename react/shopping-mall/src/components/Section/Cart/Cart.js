@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { DataContext } from '../../Context/Context';
 import Colors from '../Colors/Colors';
 import '../Details/Details.scss';
+import './Cart.scss';
 
 export class Cart extends Component {
   static contextType = DataContext;
@@ -14,7 +15,7 @@ export class Cart extends Component {
       <>
         {
           cart.map(item => (
-            <div className="details" key={item._id}>
+            <div className="details cart" key={item._id}>
               <img src={item.src} alt="" />
               <div className="box">
                 <div className="row">
@@ -36,6 +37,10 @@ export class Cart extends Component {
             </div>
           ))
         }
+        <div className="total">
+          <Link to="/payment">Payment</Link>
+          <h3>Total: 0</h3>
+        </div>
       </>
     )
   }
