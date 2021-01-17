@@ -8,7 +8,7 @@ export class Cart extends Component {
   static contextType = DataContext;
 
   render() {
-    const { cart } = this.context;
+    const { cart, reduction, increase } = this.context;
 
     return (
       <>
@@ -24,9 +24,11 @@ export class Cart extends Component {
                 <Colors colors={item.colors} />
                 <p>{item.Description}</p>
                 <p>{item.Content}</p>
-                <Link to="/cart" className="cart">
-                  Add to cart
-                </Link>
+                <div className="amount">
+                  <button className="count" onClick={() => reduction(item._id)}> - </button>
+                  <span>{item.count}</span>
+                  <button className="count" onClick={() => increase(item._id)}> + </button>
+                </div>
               </div>
             </div>
           ))
